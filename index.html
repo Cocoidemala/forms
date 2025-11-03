@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Nuevo Producto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        input[type="date"]::-webkit-calendar-picker-indicator,
+        input[type="time"]::-webkit-calendar-picker-indicator {
+            display: none;
+            -webkit-appearance: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans p-4 sm:p-10">
+
+    <div class="max-w-4xl mx-auto bg-white p-6 sm:p-8 rounded-lg shadow-md">
+        <header class="text-center mb-8">
+            <h2 class="text-2xl font-bold text-gray-800">Registro de Nuevo Producto</h2>
+            <p class="text-sm text-gray-500 mt-1">Rellene el siguiente formulario para registrar un nuevo producto.</p>
+        </header>
+
+        <form action="#" method="POST">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
+                
+                <div>
+                    <label for="product-name" class="block text-sm font-medium text-gray-700">Nombre del producto</label>
+                    <input type="text" name="product-name" id="product-name" placeholder="Introduzca el nombre del producto" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
+                </div>
+                
+                <div>
+                    <label for="product-sku" class="block text-sm font-medium text-gray-700">SKU del producto</label>
+                    <input type="text" name="product-sku" id="product-sku" placeholder="Introduzca el SKU del producto" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
+                </div>
+
+                <div class="md:col-span-2">
+                    <label for="product-description" class="block text-sm font-medium text-gray-700">Descripción del producto</label>
+                    <textarea name="product-description" id="product-description" rows="4" placeholder="Introduzca la descripción del producto" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Categoría del Producto</label>
+                    <div class="mt-2 space-y-2">
+                        <label for="cat-electronica" class="flex items-center p-3 w-full border border-gray-300 rounded-md cursor-pointer has-[:checked]:border-blue-500 has-[:checked]:bg-blue-50 transition-all">
+                            <input type="radio" name="categoria" id="cat-electronica" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500" checked>
+                            <span class="ml-3 text-sm text-gray-800">Electrónica</span>
+                        </label>
+                        <label for="cat-ropa" class="flex items-center p-3 w-full border border-gray-300 rounded-md cursor-pointer has-[:checked]:border-blue-500 has-[:checked]:bg-blue-50 transition-all">
+                            <input type="radio" name="categoria" id="cat-ropa" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <span class="ml-3 text-sm text-gray-800">Ropa</span>
+                        </label>
+                        <label for="cat-jardin" class="flex items-center p-3 w-full border border-gray-300 rounded-md cursor-pointer has-[:checked]:border-blue-500 has-[:checked]:bg-blue-50 transition-all">
+                            <input type="radio" name="categoria" id="cat-jardin" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <span class="ml-3 text-sm text-gray-800">Hogar y Jardín</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="space-y-5">
+                    <div>
+                        <label for="product-manufacturer" class="block text-sm font-medium text-gray-700">Fabricante / Proveedor</label>
+                        <select name="product-manufacturer" id="product-manufacturer" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
+                            <option>Fabricante A</option>
+                            <option>Fabricante B</option>
+                            <option>Fabricante C</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Opciones</label>
+                        <div class="mt-2 space-y-2">
+                            <label for="opt-destacado" class="flex items-center p-3 w-full border border-gray-300 rounded-md cursor-pointer has-[:checked]:border-blue-500 has-[:checked]:bg-blue-50 transition-all">
+                                <input type="checkbox" name="opt-destacado" id="opt-destacado" class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" checked>
+                                <span class="ml-3 text-sm text-gray-800">Producto destacado</span>
+                            </label>
+                            <label for="opt-envio" class="flex items-center p-3 w-full border border-gray-300 rounded-md cursor-pointer has-[:checked]:border-blue-500 has-[:checked]:bg-blue-50 transition-all">
+                                <input type="checkbox" name="opt-envio" id="opt-envio" class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                                <span class="ml-3 text-sm text-gray-800">Disponible para envío</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 md:col-span-2 gap-x-6 gap-y-5">
+                    <div>
+                        <label for="launch-date" class="block text-sm font-medium text-gray-700">Fecha de lanzamiento</label>
+                        <div class="relative mt-1">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <svg class="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008Z" />
+                                </svg>
+                            </div>
+                            <input type="text" name="launch-date" id="launch-date" placeholder="dd/mm/aaaa" onfocus="(this.type='date')" onblur="(this.type='text')" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm pl-10">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="offer-time" class="block text-sm font-medium text-gray-700">Hora de oferta especial</label>
+                        <div class="relative mt-1">
+                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <svg class="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                </svg>
+                            </div>
+                            <input type="text" name="offer-time" id="offer-time" placeholder="--:-- ----" onfocus="(this.type='time')" onblur="(this.type='text')" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm pl-10">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="main-color" class="block text-sm font-medium text-gray-700">Color principal</label>
+                        <input type="color" name="main-color" id="main-color" value="#333333" class="mt-1 block w-full h-10 rounded-md border-gray-300 shadow-sm cursor-pointer">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="stock-quantity" class="block text-sm font-medium text-gray-700">Cantidad en stock</label>
+                    <input type="number" name="stock-quantity" id="stock-quantity" value="0" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
+                </div>
+                
+                <div class="flex flex-col justify-end">
+                    <label for="product-quality" class="block text-sm font-medium text-gray-700">Calidad del producto</label>
+                    <input type="range" name="product-quality" id="product-quality" min="0" max="100" value="50" class="mt-1 w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 md:col-span-2 gap-x-6 gap-y-5">
+                    <div>
+                        <label for="product-url" class="block text-sm font-medium text-gray-700">URL del producto</label>
+                        <input type="url" name="product-url" id="product-url" placeholder="https://ejemplo.com" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="support-email" class="block text-sm font-medium text-gray-700">Email de soporte</label>
+                        <input type="email" name="support-email" id="support-email" placeholder="soporte@ejemplo.com" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="contact-phone" class="block text-sm font-medium text-gray-700">Teléfono de contacto</label>
+                        <input type="tel" name="contact-phone" id="contact-phone" placeholder="123-456-7890" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="search-tags" class="block text-sm font-medium text-gray-700">Buscar etiquetas</label>
+                     <div class="relative mt-1">
+                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                            </svg>
+                        </div>
+                        <input type="search" name="search-tags" id="search-tags" placeholder="Buscar..." class="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm pl-10">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Imágenes del producto</label>
+                    <div class="mt-1 flex items-center space-x-3">
+                        <label for="file-upload" class="cursor-pointer bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50">
+                            <span>Elegir archivos</span>
+                            <input id="file-upload" name="file-upload" type="file" class="sr-only" multiple>
+                        </label>
+                        <span id="file-name" class="text-sm text-gray-500">Ningún archivo seleccionado</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-5 mt-6 border-t border-gray-200 flex justify-end gap-3">
+                <button type="reset" class="bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-4 rounded-md text-sm font-medium border border-gray-300 transition-colors">
+                    Limpiar Formulario
+                </button>
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md text-sm font-medium transition-colors">
+                    Registrar Producto
+                </button>
+            </div>
+            
+        </form>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('file-upload');
+        const fileNameSpan = document.getElementById('file-name');
+
+        if (fileInput && fileNameSpan) {
+            fileInput.addEventListener('change', (event) => {
+                const files = event.target.files;
+                if (files.length === 0) {
+                    fileNameSpan.textContent = 'Ningún archivo seleccionado';
+                } else if (files.length === 1) {
+                    fileNameSpan.textContent = files[0].name;
+                } else {
+                    fileNameSpan.textContent = `${files.length} archivos seleccionados`;
+                }
+            });
+        }
+        
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('reset', () => {
+                if (fileNameSpan) {
+                    fileNameSpan.textContent = 'Ningún archivo seleccionado';
+                }
+                document.querySelectorAll('input[type="radio"]').forEach(radio => {
+                    radio.checked = false;
+                });
+                document.getElementById('cat-electronica').checked = true;
+                
+                document.querySelectorAll('input[type="checkbox"]').forEach(check => {
+                    check.checked = false;
+                });
+                document.getElementById('opt-destacado').checked = true;
+            });
+        }
+    </script>
+
+</body>
+</html>
